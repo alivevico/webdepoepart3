@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery ShineZone Salt River | Before & After Car Wash Cape Town</title>
+    <meta name="description" content="Gallery ShineZone Salt River: Before & after car wash results Cape Town. Premium valet R220, foam wash, exterior R80, interior vacuum. Real results from 45 Voortrekker Rd.">
+    <meta name="keywords" content="car wash gallery Salt River, before after car wash Cape Town, premium valet result, foam wash gallery, car wash photos Cape Town, ShineZone gallery">
+    <meta name="author" content="Alive - ShineZone">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ShineZone</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="fade-in">Before & After Gallery - ShineZone Salt River</h1>
+        <h2 class="fade-in">Real Results From Our Salt River Bay - Premium Valet, Foam Wash, Exterior R80</h2>
+        <p class="fade-in">Like what you see? <a href="enquiry.html">Book the same wash</a> or see <a href="services.html">prices R80-R400</a>.</p>
+        <div class="gallery-controls" style="margin:20px 0; display:flex; gap:10px; flex-wrap:wrap;">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="valet">Valet R220</button>
+            <button class="filter-btn" data-filter="wash">Wash R80-R150</button>
+            <button class="filter-btn" data-filter="team">Our Team</button>
+        </div>
+        <div class="card-grid" id="galleryGrid">
+            <div class="card gallery-item" data-category="valet"><img src="images/shinezone-premium-valet-r220-before-after.jpg" alt="ShineZone premium valet R220 before after result Salt River Cape Town - clean red car wax polish" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Premium Valet Result - R220</p><a href="enquiry.html">Book This Valet</a></div>
+            <div class="card gallery-item" data-category="team"><img src="images/shinezone-team-cleaning-car-salt-river-eco-wash.jpg" alt="ShineZone team cleaning car with biodegradable soap Salt River Cape Town - eco-friendly wash team" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Our Team In Action</p><a href="about.html">Meet The Team</a></div>
+            <div class="card gallery-item" data-category="wash"><img src="images/shinezone-exterior-wash-r80-foam-tyre-shine.jpg" alt="ShineZone exterior wash R80 foam wash tyre shine Salt River Cape Town - foam wash stage" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Foam Wash Stage - R80</p><a href="enquiry.html">Book R80 Wash</a></div>
+            <div class="card gallery-item" data-category="wash"><img src="images/shinezone-full-wash-r150-interior-vacuum.jpg" alt="ShineZone full wash R150 interior vacuum dashboard wipe Salt River Cape Town - interior clean" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Full Wash Interior - R150</p><a href="enquiry.html">Book R150 Wash</a></div>
+            <div class="card gallery-item" data-category="valet"><img src="images/shinezone-full-valet-detail-r400-complete.jpg" alt="ShineZone full valet detail R400 complete seats boot Salt River Cape Town - detail result" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Full Detail - R400</p><a href="enquiry.html">Book Detail</a></div>
+            <div class="card gallery-item" data-category="wash"><img src="images/shinezone-waterless-eco-wash-save-water.jpg" alt="ShineZone waterless eco wash biodegradable save 150L water Salt River Cape Town - eco wash" loading="lazy" width="600" height="400" style="width:100%; border-radius:6px;"><p>Waterless Eco Wash - R100</p><a href="services.html">See Eco Services</a></div>
+        </div>
+        <section style="margin-top:30px;">
+            <h2>What Our Customers Say</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="review1">Thabo - Uber Driver</button>
+                <button class="tab-btn" data-tab="review2">Sarah - Salt River</button>
+                <button class="tab-btn" data-tab="review3">Mike - Fleet</button>
+            </div>
+            <div id="review1" class="tab-content active"><p>"R80 exterior in 15 min, every day. Best for Uber. Fast lane is real." - Thabo ★★★★★</p></div>
+            <div id="review2" class="tab-content"><p>"Premium valet R220 made my car look new. Wax shine lasted weeks." - Sarah ★★★★★</p></div>
+            <div id="review3" class="tab-content"><p>"We bring 5 cars, R350 fleet deal saves us money." - Mike ★★★★★</p></div>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 ShineZone | Gallery Before & After R80-R400 | 45 Voortrekker Rd Salt River | <a href="sitemap.xml">Sitemap</a></p></footer>
+    <script src="cssjs/main.js"></script>
+    <script>
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.style.display = (filter === 'all' || item.dataset.category === filter) ? 'block' : 'none';
+            });
+        });
+    });
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;z-index:999;cursor:pointer;';
+            overlay.innerHTML = `<img src="${img.src}" alt="${img.alt}" style="max-width:90%;max-height:90%;border-radius:8px;">`;
+            overlay.addEventListener('click', () => overlay.remove());
+            document.body.appendChild(overlay);
+        });
+    });
+    </script>
+</body>
+</html>

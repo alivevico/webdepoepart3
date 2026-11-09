@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry ShineZone Salt River | Calculate Car Wash Cost R80-R400</title>
+    <meta name="description" content="Enquiry ShineZone Salt River: Calculate car wash cost instantly. Exterior R80, Full R150, Premium R220-R400. Choose service, car size, add-ons. Get instant quote. 45 Voortrekker Rd Cape Town.">
+    <meta name="keywords" content="car wash enquiry Salt River, calculate car wash cost Cape Town, car wash quote R80, car wash booking Salt River, ShineZone enquiry">
+    <meta name="author" content="Alive - ShineZone">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ShineZone</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="enquiry.html" class="active">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="fade-in">Enquiry - Calculate Your Car Wash Cost Instantly</h1>
+        <h2 class="fade-in">Exterior R80 | Full R150 | Premium R220-R400 | Get Quote in Seconds</h2>
+        <p class="fade-in">Select service below, see price update live. See <a href="services.html">full services</a> or <a href="gallery.html">gallery results</a>.</p>
+        <form id="enquiryForm" novalidate>
+            <label for="enqName">Full Name</label>
+            <input type="text" id="enqName" required placeholder="Your name">
+            <label for="enqPhone">Phone</label>
+            <input type="tel" id="enqPhone" required placeholder="081 123 4567">
+            <label for="enqEmail">Email</label>
+            <input type="email" id="enqEmail" required placeholder="you@email.com">
+            <label for="enqService">Service</label>
+            <select id="enqService">
+                <option value="80" data-name="Exterior Wash">Exterior Wash - R80 (15 min)</option>
+                <option value="150" data-name="Full Wash">Full Wash - R150 (30 min)</option>
+                <option value="220" data-name="Premium Valet">Premium Valet - R220 (60 min)</option>
+                <option value="400" data-name="Full Valet Detail">Full Valet Detail - R400 (90 min)</option>
+                <option value="100" data-name="Waterless Eco Wash">Waterless Eco Wash - R100 (20 min)</option>
+                <option value="350" data-name="Fleet Wash 5 Cars">Fleet Wash 5 Cars - R350</option>
+            </select>
+            <label for="carSize">Car Size</label>
+            <select id="carSize">
+                <option value="0">Hatchback / Small - +R0</option>
+                <option value="30">Sedan - +R30</option>
+                <option value="50">SUV / Bakkie - +R50</option>
+            </select>
+            <label><input type="checkbox" id="addWax" value="40"> Add Extra Wax Polish +R40</label><br>
+            <label><input type="checkbox" id="addInterior" value="60"> Add Deep Interior Clean +R60</label><br><br>
+            <div id="costDisplay" style="background:#e8f5e9; padding:15px; border-radius:8px; text-align:center; font-size:20px; font-weight:700;">Total Cost: R80 | Estimated Time: 15 min</div>
+            <br>
+            <label for="enqDate">Preferred Date</label>
+            <input type="date" id="enqDate" required>
+            <label for="enqMessage">Message</label>
+            <textarea id="enqMessage" rows="3" placeholder="Any notes?"></textarea>
+            <button type="submit" class="btn-primary" style="padding:12px 24px;">Submit Enquiry - Get Quote</button>
+        </form>
+        <div id="enquiryResult" style="display:none; background:#d4edda; padding:15px; border-radius:8px; margin-top:20px;"></div>
+    </main>
+    <footer><p>&copy; 2026 ShineZone | Enquiry R80-R400 | 45 Voortrekker Rd Salt River | <a href="sitemap.xml">Sitemap</a></p></footer>
+    <script src="cssjs/main.js"></script>
+    <script>
+    function updateCost() {
+        const servicePrice = +document.getElementById('enqService').value;
+        const serviceName = document.getElementById('enqService').selectedOptions[0].dataset.name;
+        const sizeExtra = +document.getElementById('carSize').value;
+        const wax = document.getElementById('addWax').checked ? 40 : 0;
+        const interior = document.getElementById('addInterior').checked ? 60 : 0;
+        const total = servicePrice + sizeExtra + wax + interior;
+        const times = {80:'15 min',150:'30 min',220:'60 min',400:'90 min',100:'20 min',350:'15 min per car'};
+        document.getElementById('costDisplay').textContent = `Total Cost: R${total} | ${serviceName} | Estimated Time: ${times[servicePrice] || '30 min'}`;
+        return total;
+    }
+    ['enqService','carSize','addWax','addInterior'].forEach(id => document.getElementById(id).addEventListener('change', updateCost));
+    updateCost();
+    document.getElementById('enquiryForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('enqName').value.trim();
+        const phone = document.getElementById('enqPhone').value.trim();
+        const email = document.getElementById('enqEmail').value.trim();
+        const date = document.getElementById('enqDate').value;
+        if(name.length < 2) { alert('Please enter your full name'); return; }
+        if(!/^0[0-9]{9}$/.test(phone.replace(/\s/g, ''))) { alert('Please enter valid SA phone like 0811234567'); return; }
+        if(!email.includes('@')) { alert('Please enter valid email'); return; }
+        if(!date) { alert('Please pick a date'); return; }
+        const total = updateCost();
+        const res = document.getElementById('enquiryResult');
+        res.style.display = 'block';
+        res.innerHTML = `<h3>Thanks ${name}!</h3><p>Your enquiry is received. Total: <strong>R${total}</strong> for ${date}. We will call you on ${phone} to confirm. See you at 45 Voortrekker Rd!</p><p><a href="contact.html">Contact us</a> | <a href="services.html">Back to services</a></p>`;
+        this.reset(); updateCost();
+    });
+    </script>
+</body>
+</html>

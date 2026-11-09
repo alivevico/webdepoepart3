@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Prices ShineZone Salt River | Car Wash R80-R400 Cape Town CBD</title>
+    <meta name="description" content="ShineZone Services & Prices Salt River: Exterior Wash R80 15min, Full Wash R150 30min, Premium Valet R220-R400 60min. Foam wash, tyre shine, interior vacuum, wax polish. Eco-friendly at 45 Voortrekker Rd, Cape Town. Book now.">
+    <meta name="keywords" content="car wash services Salt River prices, exterior wash R80 Cape Town, full wash R150 Salt River, premium valet R220 Cape Town, car wash prices Cape Town CBD, tyre shine Salt River, interior vacuum Salt River, wax polish car wash, eco car wash services">
+    <meta name="author" content="Alive - ShineZone">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ShineZone</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="fade-in">Our Services & Prices - ShineZone Salt River</h1>
+        <h2 class="fade-in">Exterior R80, Full Wash R150, Premium Valet R220-R400 - Fast Affordable Eco Wash Cape Town</h2>
+        <p class="fade-in">Open 7 days: Mon-Sat 8am-6pm, Sun 9am-4pm. Waterless options available. All washes use <a href="about.html">biodegradable soap</a>. See <a href="gallery.html">real results in gallery</a> or <a href="enquiry.html">check cost & book instantly</a>.</p>
+        <div style="margin:20px 0; display:flex; gap:15px; flex-wrap:wrap; align-items:center;">
+            <input type="text" id="serviceSearch" placeholder="Search services: e.g. R80, valet, exterior, 15 min, wax" style="padding:12px; flex:1; max-width:400px; border:1px solid #ccc; border-radius:6px; font-size:16px;">
+            <div>
+                <button class="filter-btn active" data-filter="all">All Services</button>
+                <button class="filter-btn" data-filter="wash">Wash R80-R150</button>
+                <button class="filter-btn" data-filter="valet">Valet R220-R400</button>
+                <button class="filter-btn" data-filter="eco">Eco Friendly</button>
+            </div>
+        </div>
+        <div id="services-container" class="card-grid fade-in"></div>
+        <div id="noResults" style="display:none; text-align:center; padding:20px; background:#fff3cd; border-radius:8px; margin-top:20px;"><p>No services found. Try "R80" or "valet" or <a href="#" onclick="clearSearch()">show all services</a>.</p></div>
+        <section style="margin-top:40px;">
+            <h2>Service Details & FAQ - ShineZone Salt River</h2>
+            <div class="accordion-item">
+                <button class="accordion-header">What is included in Exterior Wash R80? - 15 min Foam Wash</button>
+                <div class="accordion-body"><h3>Exterior Wash R80 - 15 Minutes Foam Wash + Tyre Shine</h3><p>Foam wash, high-pressure rinse, tyre shine and hand dry. Perfect daily wash for commuters and Uber drivers. Eco biodegradable soap.</p><p><a href="enquiry.html" class="btn-primary" style="margin-top:10px; display:inline-block;">Book Exterior R80 Now</a></p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Full Wash R150 vs Premium Valet R220 - Difference?</button>
+                <div class="accordion-body"><p><strong>Full Wash R150 (30 min):</strong> Exterior + interior vacuum, dashboard wipe, windows inside.</p><p><strong>Premium Valet R220-R400 (60 min):</strong> Full valet, wax polish, tyre shine, interior deep clean, seats, boot. Best for weekend detail.</p><p><a href="gallery.html">See before after gallery</a> for valet results.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Eco-friendly & Waterless Options - Save 150L?</button>
+                <div class="accordion-body"><p>Yes, waterless options available. We use water-saving equipment saving 150L per wash + biodegradable soap. Learn more on <a href="about.html">about page</a>.</p></div>
+            </div>
+        </section>
+        <section style="margin-top:30px;">
+            <h2>Compare Services - Quick Tabs</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="quick">Quick Washes R80-R150</button>
+                <button class="tab-btn" data-tab="valet">Valet R220-R400</button>
+                <button class="tab-btn" data-tab="fleet">Fleet & Uber</button>
+            </div>
+            <div id="quick" class="tab-content active"><h3>Quick Washes - R80 Exterior 15 min, R150 Full 30 min</h3><p>Perfect for daily drivers. Foam wash, rinse, tyre shine. <a href="enquiry.html">Check availability now</a></p></div>
+            <div id="valet" class="tab-content"><h3>Valet Services - Premium R220 60 min Valet + Wax Polish</h3><p>Full interior deep clean + wax. For weekend shine. See <a href="contact.html">location map</a></p></div>
+            <div id="fleet" class="tab-content"><h3>Fleet & Uber Discount - 5+ Cars Discount</h3><p>Special rates for Uber drivers and corporate fleets. Contact via <a href="contact.html">contact form</a> or <a href="enquiry.html">enquiry</a> with Corporate type.</p></div>
+        </section>
+        <div style="text-align:center; margin:40px 0;"><a href="enquiry.html" class="btn-primary" style="padding:14px 28px; font-size:18px;">Book Now - Check Cost Instantly</a></div>
+    </main>
+    <footer><p>&copy; 2026 ShineZone | Services R80-R400 | 45 Voortrekker Rd, Salt River | <a href="sitemap.xml">Sitemap</a></p></footer>
+  <script src="js/main.js"></script>
+    <script>
+    const servicesData = [
+        {id:1, name:"Exterior Wash", price:80, category:"wash", tags:"eco", desc:"15 minutes. Foam wash, rinse, tyre shine and hand dry. Perfect daily.", time:"15 min", image:"shinezone-exterior-wash-r80-foam-tyre-shine.jpg", alt:"ShineZone exterior wash R80 foam wash tyre shine Salt River Cape Town - 15 min quick wash eco", features:"Foam wash + Rinse + Tyre shine + Hand dry"},
+        {id:2, name:"Full Wash", price:150, category:"wash", tags:"wash", desc:"30 minutes. Exterior + interior vacuum, dashboard wipe, windows inside.", time:"30 min", image:"shinezone-full-wash-r150-interior-vacuum.jpg", alt:"ShineZone full wash R150 interior vacuum dashboard wipe Salt River Cape Town - 30 min popular wash", features:"Exterior + Interior vacuum + Dashboard + Windows"},
+        {id:3, name:"Premium Valet", price:220, category:"valet", tags:"valet eco", desc:"60 minutes. Full valet, wax polish, tyre shine, interior deep clean.", time:"60 min", image:"shinezone-premium-valet-r220-wax-polish-deep-clean.jpg", alt:"ShineZone premium valet R220 wax polish deep clean interior Salt River Cape Town - full valet best shine", features:"Full valet + Wax polish + Tyre shine + Deep clean interior"},
+        {id:4, name:"Full Valet Detail", price:400, category:"valet", tags:"valet", desc:"90 minutes. Complete detail - seats, boot, engine bay light clean, premium wax. Weekend special.", time:"90 min", image:"shinezone-full-valet-detail-r400-complete.jpg", alt:"ShineZone full valet detail R400 complete seats boot engine bay Salt River Cape Town - 90 min detail", features:"Complete detail + Seats + Boot + Engine bay + Premium wax"},
+        {id:5, name:"Fleet Wash - 5 Cars", price:350, category:"wash", tags:"wash eco", desc:"Special fleet rate - 5 cars exterior R70 each (R350 total). For Uber & corporate.", time:"15 min per car", image:"shinezone-fleet-wash-uber-corporate-discount.jpg", alt:"ShineZone fleet wash Uber corporate discount 5 cars Salt River Cape Town - fleet rate", features:"Fleet discount + Quick lane for Uber + R70 per car"},
+        {id:6, name:"Waterless Eco Wash", price:100, category:"wash", tags:"eco", desc:"20 minutes. Waterless eco wash with biodegradable spray - saves 150L water. For office parking.", time:"20 min", image:"shinezone-waterless-eco-wash-save-water.jpg", alt:"ShineZone waterless eco wash biodegradable save 150L water Salt River Cape Town - office parking", features:"Waterless + Biodegradable + Saves 150L + Office friendly"}
+    ];
+    const container = document.getElementById('services-container');
+    const searchInput = document.getElementById('serviceSearch');
+    const noResults = document.getElementById('noResults');
+    function loadServices(list = servicesData) {
+        if(!container) return;
+        container.innerHTML = '';
+        if(list.length === 0) { noResults.style.display = 'block'; return; }
+        noResults.style.display = 'none';
+        list.forEach(s => {
+            container.innerHTML += `<div class="card service-card"><img src="images/${s.image}" alt="${s.alt}" loading="lazy" width="600" height="350" style="width:100%; height:180px; object-fit:cover; border-radius:6px; margin-bottom:10px;"><h3>${s.name} - R${s.price}</h3><p><strong>${s.time}</strong> - ${s.features}</p><p>${s.desc}</p><a class="btn-primary" href="enquiry.html" style="margin-top:10px; display:inline-block; padding:8px 14px; text-decoration:none;">Book ${s.name}</a> <a class="btn" href="gallery.html" style="margin-left:5px; padding:8px 14px; border:1px solid #0B132B; border-radius:6px; text-decoration:none;">View Gallery</a></div>`;
+        });
+    }
+    searchInput?.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = servicesData.filter(s => s.name.toLowerCase().includes(term) || s.desc.toLowerCase().includes(term) || s.price.toString().includes(term) || s.category.toLowerCase().includes(term) || s.tags.toLowerCase().includes(term) || s.features.toLowerCase().includes(term));
+        loadServices(filtered);
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+            if(filter === 'all') loadServices();
+            else loadServices(servicesData.filter(s => s.category === filter || s.tags.includes(filter)));
+        });
+    });
+    function clearSearch() { searchInput.value = ''; loadServices(); document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); document.querySelector('[data-filter="all"]').classList.add('active'); }
+    loadServices();
+    </script>
+</body>
+</html>

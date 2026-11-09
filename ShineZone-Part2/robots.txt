@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shinezone.co.za/sitemap.xml

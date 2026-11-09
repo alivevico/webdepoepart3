@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShineZone Salt River | Car Wash R80-R400 Cape Town CBD - Fast Eco Wash</title>
+    <meta name="description" content="ShineZone Salt River: Fast affordable eco car wash Cape Town. Exterior R80 15min, Full Wash R150 30min, Premium Valet R220-R400. Biodegradable soap, save 150L. 45 Voortrekker Rd, open 7 days. Book now.">
+    <meta name="keywords" content="car wash Salt River, car wash Cape Town CBD, car wash R80 Salt River, eco car wash Cape Town, full wash R150, premium valet R220, car wash near me Salt River, ShineZone">
+    <meta name="author" content="Alive - ShineZone">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ShineZone</h1>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero fade-in" style="text-align:center; padding:30px 10px; background:#f0f7ff; border-radius:8px;">
+            <h1>ShineZone - Fast, Affordable Car Wash in Salt River, Cape Town</h1>
+            <h2>Exterior R80 in 15 Min | Full Wash R150 | Premium Valet R220-R400 - Eco-Friendly</h2>
+            <p>ShineZone at 45 Voortrekker Rd - open 7 days. Quick, eco-friendly washes with biodegradable soap. Save 150L water per wash.</p>
+            <a class="btn-primary" href="enquiry.html" style="padding:14px 28px; display:inline-block; margin-top:10px;">Book Now - Check Cost Instantly</a>
+            <a class="btn" href="services.html" style="padding:14px 28px; display:inline-block; margin-left:10px; border:1px solid #0B132B; border-radius:6px; text-decoration:none;">See Prices R80-R400</a>
+        </section>
+        <img src="images/shinezone-exterior-wash-r80-foam-tyre-shine.jpg" alt="ShineZone car wash Salt River Cape Town exterior wash R80 foam wash tyre shine - fast eco car wash" loading="lazy" width="800" height="450" style="width:100%; max-width:800px; border-radius:8px; margin:20px auto; display:block;">
+        <div class="card-grid">
+            <div class="card"><h3>Exterior R80</h3><p>15 min wash & dry - Foam wash + tyre shine</p><a href="enquiry.html">Book R80</a> | <a href="services.html">Details</a></div>
+            <div class="card"><h3>Full Wash R150</h3><p>Inside + Outside 30 min - Vacuum + dashboard</p><a href="enquiry.html">Book R150</a> | <a href="services.html">Details</a></div>
+            <div class="card"><h3>Premium R220</h3><p>Full valet + wax - 60 min deep clean</p><a href="enquiry.html">Book R220</a> | <a href="services.html">Details</a></div>
+        </div>
+        <div class="stats fade-in" style="display:flex; gap:20px; justify-content:center; text-align:center; margin:30px 0;">
+            <div><h3><span class="counter" data-target="15000">0</span>+</h3><p>Cars Washed in Salt River</p></div>
+            <div><h3>4.9 ★</h3><p>Google Rating</p></div>
+            <div><h3><span class="counter" data-target="150">0</span>L</h3><p>Water Saved Per Wash</p></div>
+        </div>
+        <div id="openStatus" style="background:#e8f5e9; padding:12px; border-radius:6px; text-align:center; font-weight:600; margin:15px 0;">Checking if we are open now...</div>
+        <section style="margin-top:30px;">
+            <h2>Quick Answers - ShineZone Salt River</h2>
+            <div class="accordion-item">
+                <button class="accordion-header">How much is a car wash? R80, R150 or R220?</button>
+                <div class="accordion-body"><p>Exterior R80 (15 min), Full R150 (30 min), Premium R220-R400 (60-90 min). See <a href="services.html">full prices</a>.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Do you use eco-friendly soap?</button>
+                <div class="accordion-body"><p>Yes, biodegradable soap + water-saving equipment. Learn more on <a href="about.html">about page</a>.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Where are you?</button>
+                <div class="accordion-body"><p>45 Voortrekker Rd, Salt River. Map on <a href="contact.html">contact page</a>. <a href="gallery.html">See gallery</a> for results.</p></div>
+            </div>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 ShineZone | Car Wash R80-R400 Salt River | 45 Voortrekker Rd | <a href="sitemap.xml">Sitemap</a></p></footer>
+    <script src="js/main.js"></script>
+    <script>
+    document.querySelectorAll('.counter').forEach(c => {
+        let target = +c.dataset.target, count = 0;
+        const timer = setInterval(() => { count += Math.ceil(target/50); if(count >= target){ count = target; clearInterval(timer);} c.textContent = count; }, 30);
+    });
+    const h = new Date().getHours(), d = new Date().getDay();
+    let open = (d===0) ? (h>=9 && h<16) : (h>=8 && h<18);
+    document.getElementById('openStatus').textContent = open ? '✅ OPEN NOW - Walk-ins Welcome at 45 Voortrekker Rd!' : '❌ CLOSED NOW - Book online for tomorrow 8am';
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact ShineZone Salt River | Book Car Wash R80-R400 Cape Town</title>
+    <meta name="description" content="Contact ShineZone Salt River: Book car wash R80-R400. 45 Voortrekker Rd, Salt River, Cape Town. Call 021 123 4567. Open 7 days Mon-Sat 8am-6pm Sun 9am-4pm. Map + booking form.">
+    <meta name="keywords" content="contact ShineZone Salt River, book car wash Cape Town, car wash Salt River phone number, car wash map Voortrekker Rd, car wash booking form Cape Town">
+    <meta name="author" content="Alive - ShineZone">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>ShineZone</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="enquiry.html">Enquiry</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="fade-in">Contact ShineZone - Book Your Wash Salt River</h1>
+        <h2 class="fade-in">45 Voortrekker Rd, Salt River | 021 123 4567 | Open 7 Days</h2>
+        <p class="fade-in">Want instant price? Use our <a href="enquiry.html">enquiry page to calculate cost</a> or see <a href="services.html">full services & prices</a> first.</p>
+        <p>Find us: 45 Voortrekker Rd, Salt River, Cape Town | 021 123 4567 | Open 7 days</p>
+        <div id="openStatus" style="background:#e8f5e9; padding:12px; border-radius:6px; margin:15px 0; text-align:center; font-weight:600;">Checking if we are open now...</div>
+        <form id="contactForm" novalidate>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="081 123 4567">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@email.com">
+            <label for="service">Service</label>
+            <select id="service" name="service">
+                <option>Exterior R80</option>
+                <option>Full Wash R150</option>
+                <option>Premium R220</option>
+                <option>Full Detail R400</option>
+                <option>Waterless Eco R100</option>
+            </select>
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Preferred date/time"></textarea>
+            <button type="submit" class="btn-primary">Send Booking</button>
+        </form>
+        <br>
+        <iframe title="ShineZone Map - 45 Voortrekker Rd Salt River Cape Town" src="https://maps.google.com/maps?q=Voortrekker%20Rd%20Salt%20River&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy"></iframe>
+        <section style="margin-top:30px;">
+            <h2>Contact FAQ</h2>
+            <div class="accordion-item">
+                <button class="accordion-header">Do I need to book or can I just walk in?</button>
+                <div class="accordion-body"><p>Walk-ins welcome! But booking via <a href="enquiry.html">enquiry</a> saves you waiting. Exterior R80 is 15 min.</p></div>
+            </div>
+            <div class="accordion-item">
+                <button class="accordion-header">Where do I park?</button>
+                <div class="accordion-body"><p>Free easy parking at 45 Voortrekker Rd, Salt River. See <a href="gallery.html">gallery</a> for entrance photo.</p></div>
+            </div>
+        </section>
+    </main>
+    <footer><p>&copy; 2026 ShineZone | Contact 021 123 4567 | 45 Voortrekker Rd Salt River | <a href="sitemap.xml">Sitemap</a></p></footer>
+    <script src="js/main.js"></script>
+    <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        if(name.length < 2) { alert('Please enter your full name'); return; }
+        if(!/^0[0-9]{9}$/.test(phone.replace(/\s/g, ''))) { alert('Please enter a valid SA phone like 0811234567'); return; }
+        if(!email.includes('@')) { alert('Please enter a valid email'); return; }
+        alert('Thanks ' + name + '! Booking received. We will call you on ' + phone + ' to confirm. See you at 45 Voortrekker Rd!');
+        this.reset();
+    });
+    const hour = new Date().getHours(); const day = new Date().getDay();
+    let isOpen = (day === 0) ? (hour >= 9 && hour < 16) : (hour >= 8 && hour < 18);
+    document.getElementById('openStatus').textContent = isOpen ? '✅ We are OPEN NOW - Walk-ins welcome!' : '❌ We are CLOSED now - But you can still book below, we open 8am tomorrow.';
+    document.getElementById('openStatus').style.background = isOpen ? '#e8f5e9' : '#fff3cd';
+    </script>
+</body>
+</html>
